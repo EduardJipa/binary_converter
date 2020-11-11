@@ -1,9 +1,9 @@
 
-public class main {
+public class Main {
 
     public static void main(String[] args) {
-        System.out.print(doBinaryToDecimal("00101010"));
-        System.out.println(doDecimalToBinary(49));
+        System.out.println(doBinaryToDecimal("00101010"));
+        System.out.print(doDecimalToBinary(42));
 
     }
     public static int doBinaryToDecimal(String input){
@@ -15,15 +15,15 @@ public class main {
         return (runningTotal);};
 
     public static String doDecimalToBinary(int input){
-        int runningTotal = 0;
+        int runningTotal = input;
         String runningString = ("");
         int currentWeight;
         for(int i = 0; i < 8 ;i++){
-            currentWeight = (int) Math.pow(2,(8-i));
-            if(i%currentWeight > 0){
+            currentWeight = (int) Math.pow(2,(7-i));
+            if(runningTotal-currentWeight>0){
                 runningTotal -= currentWeight;
-                runningString.concat("1");
-            }else{runningString.concat("0");}
+                runningString+=("1");
+            }else{runningString+=("0");}
         }
 
         return  runningString;
