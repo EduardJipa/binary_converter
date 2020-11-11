@@ -3,7 +3,7 @@ public class main {
 
     public static void main(String[] args) {
         System.out.println(doBinaryToDecimal("00101010"));
-        System.out.print(doDecimalToBinary(42));
+        System.out.print(doDecimalToBinary(255));
 
     }
     public static int doBinaryToDecimal(String input){
@@ -15,6 +15,7 @@ public class main {
         return (runningTotal);};
 
     public static String doDecimalToBinary(int input){
+        input = input +1;
         int runningTotal = input;
         String runningString = ("");
         int currentWeight;
